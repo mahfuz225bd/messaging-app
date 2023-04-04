@@ -197,8 +197,13 @@ body {
     background-color: #0066cc;
 }
 
-/* Custom Scrollbar */
+.github-source-link {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+}
 
+/* Custom Scrollbar */
 /* width */
 .chat-list::-webkit-scrollbar,
 .conversation::-webkit-scrollbar {
