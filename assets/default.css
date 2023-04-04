@@ -33,14 +33,20 @@ body {
     margin-bottom: 10px;
 }
 
-/* সাইডবারে ইনপুট */
-.sidebar .search-input {
-    width: 100%;
+/*  */
+.sidebar .search-chatlist {
     padding: 10px;
     margin-bottom: 10px;
-    border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+/* সাইডবারে ইনপুট */
+.sidebar .search-chatlist .search-input {
+    width: 240px;
     font-size: 16px;
+    border: none;
+    outline: none;
 }
 
 
