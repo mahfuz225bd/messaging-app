@@ -177,6 +177,15 @@ body {
     border: none;
 }
 
+.send-message-form button[type="submit"] {
+    display: flex;
+}
+
+.send-message-form button[type="submit"] img {
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
 .chatbox .conversation,
 .chatbox .send-message-form {
     padding-left: 20px;
