@@ -50,19 +50,19 @@ body {
 }
 
 
-/* সাইডবারে লিস্ট এলিমেন্ট */
+/* সাইডবার লিস্ট এলিমেন্ট */
 .sidebar ul.chat-list {
     list-style: none;
     overflow-y: auto;
 }
 
-/* সাইডবারে লিস্ট এলিমেন্টের আইটেম */
+/* সাইডবার লিস্ট এলিমেন্টের আইটেম */
 .sidebar ul.chat-list li {
     padding: 10px;
     cursor: pointer;
 }
 
-/* সাইডবারে লিস্ট এলিমেন্ট আইটেম, যেটি সক্রিয় */
+/* সাইডবার লিস্ট এলিমেন্ট আইটেম, যেটি সক্রিয় */
 .sidebar ul.chat-list li.active {
     background-color: #ddd;
 }
@@ -76,7 +76,7 @@ body {
     justify-content: space-between;
 }
 
-/* চ্যাটবক্সে কন্টাক্ট ইনফো */
+/* চ্যাটবক্স কন্টাক্ট ইনফো */
 .chatbox .contact-info {
     background-color: #efefef;
     color: #666;
@@ -84,7 +84,7 @@ body {
 }
 
 
-/* চ্যাটবক্সে হেডিং */
+/* চ্যাটবক্স হেডিং */
 .chatbox h1 {
     margin-bottom: 10px;
 }

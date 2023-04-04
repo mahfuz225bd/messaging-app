@@ -1,10 +1,15 @@
+// Function: formattedDateTime()
+const formattedDateTime = (datetime) => {
+    return new Date(datetime).toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+}
+
 // Function: autoScrollBottom()
 const autoScrollBottom = (refElement) => {
     refElement.scrollTop = refElement.offsetHeight
 }
 
 // Function: sendMessage()
-const sendMessage = (refMessageInput, refMessageContainer) => {
+const sendMessage = (refMessageInput, refMessageContainer, datetime) => {
     // মেসেজ ইনপুটের মান নেওয়া হচ্ছে, সবগুলো \n to "<br/>" replacing সহ
     const messageText = refMessageInput.value.replaceAll("\n", "<br>");
 
@@ -13,7 +18,7 @@ const sendMessage = (refMessageInput, refMessageContainer) => {
         // নতুন মেসেজ এলিমেন্ট তৈরি করে মেসেজ টেক্সট সহ যোগ করা হচ্ছে
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', 'sent');
-        // messageElement.title = `${username} at ${datetime}`
+        messageElement.title = `me at ${datetime}`
         messageElement.innerHTML = messageText;
 
         // মেসেজ এলিমেন্টটি মেসেজ কন্টেনারে যোগ করা হচ্ছে
@@ -27,12 +32,12 @@ const sendMessage = (refMessageInput, refMessageContainer) => {
 }
 
 // Function: sendLike()
-const sendLike = (type, refMessageContainer) => {
+const sendLike = (type, refMessageContainer, datetime) => {
     if (type === 'sent' || type === 'received') {
         // নতুন মেসেজ এলিমেন্ট তৈরি করে লাইক যুক্ত করা হচ্ছে
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', 'like', type)
-        // messageElement.title = `${username} at ${datetime}`
+        messageElement.title = `me at ${datetime}`
 
         // মেসেজ এলিমেন্টটি মেসেজ কন্টেনারে যোগ করা হচ্ছে
         refMessageContainer.appendChild(messageElement);
@@ -105,12 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         // sendMessage() execute হবে (১)
-        sendMessage(messageInput, messageContainer)
+        sendMessage(messageInput, messageContainer, new Date())
     });
 
     // সেন্ড লাইক
     document.getElementById("btnLike").addEventListener('click', () => {
-        sendLike('sent', messageContainer)
+        sendLike('sent', messageContainer, new Date())
     })
 
     const keyPressed = new Array()
@@ -136,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (keyPressed[keyPressed.length - 1] === "Enter") {
                 // sendMessage() execute হবে (২)
                 setTimeout(() => {
-                    sendMessage(messageInput, messageContainer)
+                    sendMessage(messageInput, messageContainer, new Date())
                 });
                 clearKeyPressedData()
             }
