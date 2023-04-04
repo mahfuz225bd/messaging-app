@@ -13,6 +13,7 @@ body {
 .container {
     display: flex;
     height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -20,10 +21,14 @@ body {
 .sidebar {
     width: 300px;
     background-color: #f2f2f2;
-    padding: 20px;
 }
 
-/* সাইডবারে হেডিং */
+/* সাইডবার হেডার গ্রুপ */
+.sidebar hgroup {
+    padding: 10px 10px 0 10px;
+}
+
+/* সাইডবার হেডিং */
 .sidebar h1 {
     margin-bottom: 10px;
 }
@@ -40,18 +45,19 @@ body {
 
 
 /* সাইডবারে লিস্ট এলিমেন্ট */
-.sidebar ul {
+.sidebar ul.contact-list {
     list-style: none;
+    overflow-y: auto;
 }
 
 /* সাইডবারে লিস্ট এলিমেন্টের আইটেম */
-.sidebar li {
+.sidebar ul.contact-list li {
     padding: 10px;
     cursor: pointer;
 }
 
 /* সাইডবারে লিস্ট এলিমেন্ট আইটেম, যেটি সক্রিয় */
-.sidebar li.active {
+.sidebar ul.contact-list li.active {
     background-color: #ddd;
 }
 
@@ -74,6 +80,7 @@ body {
 .conversation {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 /* মেসেজ */
@@ -97,6 +104,7 @@ body {
     background-color: #0056AD;
     color: #fff;
     align-self: flex-end;
+    margin-right: 12px;
 }
 
 
@@ -133,4 +141,32 @@ body {
 /* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
 .send-message-form button[type="submit"]:hover {
     background-color: #0066cc;
+}
+
+/* Custom Scrollbar */
+
+/* width */
+.contact-list::-webkit-scrollbar,
+.conversation::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.contact-list::-webkit-scrollbar-track,
+.conversation::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.contact-list::-webkit-scrollbar-thumb,
+.conversation::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.contact-list::-webkit-scrollbar-thumb:hover,
+.conversation::-webkit-scrollbar-thumb:hover {
+    background: #666;
 }

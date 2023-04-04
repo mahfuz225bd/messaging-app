@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Sidebar
+    // Automatically #contactList এর height সেট করা হচ্ছে
+    document.getElementById("contactList").style.height = window.innerHeight - document.querySelector("hgroup").offsetHeight + 'px'
 
     // চ্যাট লিস্ট এবং তার আইটেমগুলো নেওয়া হচ্ছে
     const chatList = document.querySelector('.sidebar ul');
