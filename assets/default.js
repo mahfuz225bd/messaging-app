@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sidebar
 
     // চ্যাট লিস্ট এবং তার আইটেমগুলো নেওয়া হচ্ছে
-    const chatList = document.querySelector("#contactList");
+    const chatList = document.querySelector("#chatList");
     const chatItems = chatList.querySelectorAll('li');
 
-    // Automatically #contactList এর height সেট করা হচ্ছে
+    // Automatically #chatList এর height সেট করা হচ্ছে
     chatList.style.height = window.innerHeight - document.querySelector("hgroup").offsetHeight + 'px'
 
     // চ্যাট আইটেমগুলোতে লুপ চালানো হচ্ছে

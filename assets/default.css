@@ -45,19 +45,19 @@ body {
 
 
 /* সাইডবারে লিস্ট এলিমেন্ট */
-.sidebar ul.contact-list {
+.sidebar ul.chat-list {
     list-style: none;
     overflow-y: auto;
 }
 
 /* সাইডবারে লিস্ট এলিমেন্টের আইটেম */
-.sidebar ul.contact-list li {
+.sidebar ul.chat-list li {
     padding: 10px;
     cursor: pointer;
 }
 
 /* সাইডবারে লিস্ট এলিমেন্ট আইটেম, যেটি সক্রিয় */
-.sidebar ul.contact-list li.active {
+.sidebar ul.chat-list li.active {
     background-color: #ddd;
 }
 
@@ -147,7 +147,7 @@ body {
 }
 
 .chatbox .conversation,
-.chatbox .send-message-form{
+.chatbox .send-message-form {
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -160,27 +160,27 @@ body {
 /* Custom Scrollbar */
 
 /* width */
-.contact-list::-webkit-scrollbar,
+.chat-list::-webkit-scrollbar,
 .conversation::-webkit-scrollbar {
     width: 5px;
 }
 
 /* Track */
-.contact-list::-webkit-scrollbar-track,
+.chat-list::-webkit-scrollbar-track,
 .conversation::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
 /* Handle */
-.contact-list::-webkit-scrollbar-thumb,
+.chat-list::-webkit-scrollbar-thumb,
 .conversation::-webkit-scrollbar-thumb {
     background: #222;
     border-radius: 10px;
 }
 
 /* Handle on hover */
-.contact-list::-webkit-scrollbar-thumb:hover,
+.chat-list::-webkit-scrollbar-thumb:hover,
 .conversation::-webkit-scrollbar-thumb:hover {
     background: #666;
 }
