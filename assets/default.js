@@ -1,11 +1,37 @@
+// Function: autoScrollBottom()
+const autoScrollBottom = (refElement) => {
+    refElement.scrollTop = refElement.offsetHeight
+}
+
+// Function: sendMessage()
+const sendMessage = (refMessageInput, refMessageContainer) => {
+    // মেসেজ ইনপুটের মান নেওয়া হচ্ছে, সবগুলো \n to "<br/>" replacing সহ
+    const messageText = refMessageInput.value.replaceAll("\n", "<br>");
+
+    // যদি মেসেজ ইনপুট খালি না হয়
+    if (messageText.trim() !== '') {
+        // নতুন মেসেজ এলিমেন্ট তৈরি করে মেসেজ টেক্সট সহ যোগ করা হচ্ছে
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', 'sent');
+        messageElement.innerHTML = messageText;
+
+        // মেসেজ এলিমেন্টটি মেসেজ কন্টেনারে যোগ করা হচ্ছে
+        refMessageContainer.appendChild(messageElement);
+
+        // মেসেজ ইনপুটের মান ফর্ম ক্লিয়ার করা হচ্ছে
+        refMessageInput.value = '';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Sidebar
-    // Automatically #contactList এর height সেট করা হচ্ছে
-    document.getElementById("contactList").style.height = window.innerHeight - document.querySelector("hgroup").offsetHeight + 'px'
 
     // চ্যাট লিস্ট এবং তার আইটেমগুলো নেওয়া হচ্ছে
-    const chatList = document.querySelector('.sidebar ul');
+    const chatList = document.querySelector("#contactList");
     const chatItems = chatList.querySelectorAll('li');
+
+    // Automatically #contactList এর height সেট করা হচ্ছে
+    chatList.style.height = window.innerHeight - document.querySelector("hgroup").offsetHeight + 'px'
 
     // চ্যাট আইটেমগুলোতে লুপ চালানো হচ্ছে
     chatItems.forEach(item => {
@@ -18,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('active');
 
             // নির্বাচিত ব্যবহারকারীর নামটি ব্যবহার করে চ্যাটবক্স হেডিং আপডেট করা হচ্ছে
-            const chatboxHeading = document.querySelector('.chatbox h1');
+            const chatboxHeading = document.querySelector('.chatbox h2');
             chatboxHeading.textContent = item.textContent;
         });
     });
@@ -52,25 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbox = document.querySelector('.chatbox');
     const messageContainer = chatbox.querySelector('.conversation');
 
-    // Function: sendMessage()
-    const sendMessage = (refMessageInput, refMessageContainer) => {
-        // মেসেজ ইনপুটের মান নেওয়া হচ্ছে, সবগুলো \n to "<br/>" replacing সহ
-        const messageText = refMessageInput.value.replaceAll("\n", "<br>");
 
-        // যদি মেসেজ ইনপুট খালি না হয়
-        if (messageText.trim() !== '') {
-            // নতুন মেসেজ এলিমেন্ট তৈরি করে মেসেজ টেক্সট সহ যোগ করা হচ্ছে
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message', 'sent');
-            messageElement.innerHTML = messageText;
-
-            // মেসেজ এলিমেন্টটি মেসেজ কন্টেনারে যোগ করা হচ্ছে
-            refMessageContainer.appendChild(messageElement);
-
-            // মেসেজ ইনপুটের মান ফর্ম ক্লিয়ার করা হচ্ছে
-            refMessageInput.value = '';
-        }
-    }
 
     // সেন্ড মেসেজ ফর্মে একটি সাবমিট ইভেন্ট লিস্টেনার যোগ করা হচ্ছে
     sendMessageForm.addEventListener('submit', event => {

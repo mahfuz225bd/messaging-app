@@ -65,11 +65,18 @@ body {
 .chatbox {
     flex: 1;
     background-color: #fff;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* চ্যাটবক্সে কন্টাক্ট ইনফো */
+.chatbox .contact-info {
+    background-color: #efefef;
+    color: #666;
+    padding: 20px;
+}
+
 
 /* চ্যাটবক্সে হেডিং */
 .chatbox h1 {
@@ -111,6 +118,7 @@ body {
 /* মেসেজ পাঠানোর ফরম */
 .send-message-form {
     display: flex;
+    padding-bottom: 10px;
 }
 
 /* মেসেজ ইনপুট */
@@ -136,6 +144,12 @@ body {
     margin-left: 7px;
     padding: 15px;
     border: none;
+}
+
+.chatbox .conversation,
+.chatbox .send-message-form{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
