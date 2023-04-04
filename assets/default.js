@@ -3,6 +3,11 @@ const formattedDateTime = (datetime) => {
     return new Date(datetime).toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
 }
 
+// Function: setFocusToMessageInput
+const setFocusToMessageInput = () => {
+    document.getElementById("messageInput").focus()
+}
+
 // Function: autoScrollBottom()
 const autoScrollBottom = (refElement) => {
     refElement.scrollTop = refElement.offsetHeight
@@ -27,8 +32,10 @@ const sendMessage = (refMessageInput, refMessageContainer, datetime) => {
         // মেসেজ ইনপুটের মান ফর্ম ক্লিয়ার করা হচ্ছে
         refMessageInput.value = '';
     }
-
     autoScrollBottom(document.getElementById("conversation"))
+
+    // Input focus
+    refMessageInput.focus()
 }
 
 // Function: sendLike()
@@ -43,6 +50,8 @@ const sendLike = (type, refMessageContainer, datetime) => {
         refMessageContainer.appendChild(messageElement);
 
         autoScrollBottom(document.getElementById("conversation"))
+
+        setFocusToMessageInput()
     } else {
         console.error("Value of parameter: type must be `sent` or `received`.");
     }
@@ -55,8 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatList = document.querySelector("#chatList");
     const chatItems = chatList.querySelectorAll('li');
 
-    // Automatically #chatList এর height সেট করা হচ্ছে
+    // Automatically #chatList এর height সেট করা হচ্ছে + setFocusToMessageInput
     chatList.style.height = window.innerHeight - document.querySelector("hgroup").offsetHeight + 'px'
+    setFocusToMessageInput()
 
     // চ্যাট আইটেমগুলোতে লুপ চালানো হচ্ছে
     chatItems.forEach(item => {
