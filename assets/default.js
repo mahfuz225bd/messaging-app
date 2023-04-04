@@ -21,6 +21,8 @@ const sendMessage = (refMessageInput, refMessageContainer) => {
         // মেসেজ ইনপুটের মান ফর্ম ক্লিয়ার করা হচ্ছে
         refMessageInput.value = '';
     }
+
+    autoScrollBottom(document.getElementById("conversation"))
 }
 
 document.addEventListener('DOMContentLoaded', () => {
