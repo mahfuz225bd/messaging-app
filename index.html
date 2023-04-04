@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Messaging App</title>
+    <link rel="stylesheet" type="text/css" href="./assets/default.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Chat List</h1>
+            <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+            <ul>
+                <li class="active">John Doe</li>
+                <li>Jane Doe</li>
+                <li>Mark Smith</li>
+                <li>Sarah Johnson</li>
+            </ul>
+        </div>
+        <div class="chatbox">
+            <h1>John Doe</h1>
+            <div class="conversation">
+                <div class="message received">Hi, how are you?</div>
+                <div class="message sent">I'm good, thanks. How about you?</div>
+                <div class="message received">I'm doing well, thanks for asking.</div>
+            </div>
+            <form action="" class="send-message-form" id="sendMessageForm">
+                <textarea placeholder="Type your message..." class="message-input" id="messageInput"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="./assets/default.js"></script>
+</body>
+
+</html>
