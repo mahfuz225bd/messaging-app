@@ -13,6 +13,7 @@ const sendMessage = (refMessageInput, refMessageContainer) => {
         // নতুন মেসেজ এলিমেন্ট তৈরি করে মেসেজ টেক্সট সহ যোগ করা হচ্ছে
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', 'sent');
+        // messageElement.title = `${username} at ${datetime}`
         messageElement.innerHTML = messageText;
 
         // মেসেজ এলিমেন্টটি মেসেজ কন্টেনারে যোগ করা হচ্ছে
@@ -23,6 +24,23 @@ const sendMessage = (refMessageInput, refMessageContainer) => {
     }
 
     autoScrollBottom(document.getElementById("conversation"))
+}
+
+// Function: sendLike()
+const sendLike = (type, refMessageContainer) => {
+    if (type === 'sent' || type === 'received') {
+        // নতুন মেসেজ এলিমেন্ট তৈরি করে লাইক যুক্ত করা হচ্ছে
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', 'like', type)
+        // messageElement.title = `${username} at ${datetime}`
+
+        // মেসেজ এলিমেন্টটি মেসেজ কন্টেনারে যোগ করা হচ্ছে
+        refMessageContainer.appendChild(messageElement);
+
+        autoScrollBottom(document.getElementById("conversation"))
+    } else {
+        console.error("Value of parameter: type must be `sent` or `received`.");
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -74,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // সেন্ড মেসেজ ফর্ম এবং এর ইনপুটগুলি নেওয়া হচ্ছে
     const sendMessageForm = document.querySelector('#sendMessageForm');
     const messageInput = sendMessageForm.querySelector('#messageInput');
-    const sendButton = sendMessageForm.querySelector('#sendMessageForm button[type="submit"]');
 
     // চ্যাটবক্স এবং মেসেজ কন্টেনার নেওয়া হচ্ছে
     const chatbox = document.querySelector('.chatbox');
@@ -90,6 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // sendMessage() execute হবে (১)
         sendMessage(messageInput, messageContainer)
     });
+
+    // সেন্ড লাইক
+    document.getElementById("btnLike").addEventListener('click', () => {
+        sendLike('sent', messageContainer)
+    })
 
     const keyPressed = new Array()
 

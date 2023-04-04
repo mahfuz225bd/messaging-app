@@ -33,7 +33,7 @@ body {
     margin-bottom: 10px;
 }
 
-/*  */
+/* সাইডবার চ্যাট লিস্ট সার্চ */
 .sidebar .search-chatlist {
     padding: 10px;
     margin-bottom: 10px;
@@ -41,7 +41,7 @@ body {
     background-color: #fff;
 }
 
-/* সাইডবারে ইনপুট */
+/* সাইডবার ইনপুট */
 .sidebar .search-chatlist .search-input {
     width: 240px;
     font-size: 16px;
@@ -120,6 +120,16 @@ body {
     margin-right: 12px;
 }
 
+/* ম্যাসেজ লাইক */
+.message.like {
+    background: none;
+    font-size: xx-large;
+}
+
+.message.like::after {
+    content: "👍";
+}
+
 
 /* মেসেজ পাঠানোর ফরম */
 .send-message-form {
@@ -138,6 +148,21 @@ body {
     font-size: 16px;
     resize: none;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* লাইক বাটন */
+.send-message-form .btn-like {
+    cursor: pointer;
+    background-image: url(./icons/like.png);
+    background-size: 100%;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+}
+
+/* লাইক বাটন :hover effect */
+.send-message-form .btn-like:hover {
+    background-image: url(./icons/like2.png);
 }
 
 /* মেসেজ পাঠানোর জন্য submit বাটন */
