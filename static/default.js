@@ -15,11 +15,10 @@ const autoScrollBottom = (refElement) => {
 
 // Function: sendMessage()
 const sendMessage = (refMessageInput, refMessageContainer, datetime) => {
-    // মেসেজ ইনপুটের মান নেওয়া হচ্ছে, সবগুলো \n to "<br/>" replacing সহ
-    const messageText = refMessageInput.value.replaceAll("\n", "<br>");
-
-    // যদি মেসেজ ইনপুট খালি না হয়
-    if (messageText.trim() !== '') {
+    // যদি মেসেজ ইনপুট খালি না হয় (অন্য কোন character ছাড়া এক বা একাধিক \n বা newline পাওয়া যায়) এরূপ ক্ষেত্রে regex সত্য হলে
+    if (refMessageInput.value.match(/[^\n]+/gm)) {
+        // মেসেজ ইনপুটের মান নেওয়া হচ্ছে, সবগুলো \n to "<br/>" replacing এবং '' trim করা সহ
+        const messageText = refMessageInput.value.replaceAll("\n", "<br>").trim();
         // নতুন মেসেজ এলিমেন্ট তৈরি করে মেসেজ টেক্সট সহ যোগ করা হচ্ছে
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', 'sent');
