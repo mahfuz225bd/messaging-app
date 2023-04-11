@@ -153,6 +153,7 @@ body {
 /* লাইক বাটন */
 .send-message-form .btn-like {
     cursor: pointer;
+    /* URL from current location */
     background-image: url(./icons/like.png);
     background-size: 100%;
     align-self: center;
@@ -162,6 +163,7 @@ body {
 
 /* লাইক বাটন :hover effect */
 .send-message-form .btn-like:hover {
+    /* URL from current location */
     background-image: url(./icons/like2.png);
 }
 
