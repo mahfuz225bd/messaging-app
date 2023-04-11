@@ -11,10 +11,10 @@
             </div>
         </hgroup>
         <ul class="chat-list" id="chatList">
-            <li class="active">John Doe</li>
-            <li>Jane Doe</li>
-            <li>Mark Smith</li>
-            <li>Sarah Johnson</li>
+            <li class="active">@everyone</li>
+            {% for username in usernames %}
+            <li>{{username}}</li>
+            {% endfor %}
         </ul>
     </div>
     <div class="chatbox">
