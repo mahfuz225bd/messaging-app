@@ -1,3 +1,3 @@
 # Messaging App
 
-A simple messaging app \w starter features. Frontend part is developing and backend is not implemented yet.
+A simple messaging app \w starter features. Frontend part is developed (basic) and backed part is developing with python flask framework.
