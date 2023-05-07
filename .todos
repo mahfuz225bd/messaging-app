@@ -1,2 +1,12 @@
 - rename className .received to .incomming
 - rename className .sent to .outgoing
+- Guest Login System
+
+Optionals:
+- User login/registration system
+- Adding avatar:minidenticons for profiles
+- Design for message header
+- Design for message sidebar
+- User settings
+- Emoji palate for messaging
+- Send a attachment
