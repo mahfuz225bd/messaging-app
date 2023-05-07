@@ -1,12 +1,19 @@
 from flask import Flask, render_template
+from db_config import db_cursor
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def index():
-    usernames = ['Nick', 'Robert', 'Deondre', 'John Doe',
-                 'Jane Doe', 'Mark Smith', 'Sarah Johnson']
+    usernames = []
+    
+    db_cursor.execute("SELECT name FROM chat_users")
+
+    users = db_cursor.fetchall()
+
+    for username in users:
+        usernames.append(username[0])
+
     return render_template("index.html", usernames=usernames)
 
 
