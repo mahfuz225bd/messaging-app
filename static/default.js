@@ -21,7 +21,7 @@ const sendMessage = (refMessageInput, refMessageContainer, datetime) => {
         const messageText = refMessageInput.value.replaceAll("\n", "<br>").trim();
         // নতুন মেসেজ এলিমেন্ট তৈরি করে মেসেজ টেক্সট সহ যোগ করা হচ্ছে
         const messageElement = document.createElement('div');
-        messageElement.classList.add('message', 'sent');
+        messageElement.classList.add('message', 'outgoing');
         messageElement.title = `me at ${datetime}`
         messageElement.innerHTML = messageText;
 
@@ -39,7 +39,7 @@ const sendMessage = (refMessageInput, refMessageContainer, datetime) => {
 
 // Function: sendLike()
 const sendLike = (type, refMessageContainer, datetime) => {
-    if (type === 'sent' || type === 'incomming') {
+    if (type === 'outgoing' || type === 'incomming') {
         // নতুন মেসেজ এলিমেন্ট তৈরি করে লাইক যুক্ত করা হচ্ছে
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', 'like', type)
@@ -52,7 +52,7 @@ const sendLike = (type, refMessageContainer, datetime) => {
 
         setFocusToMessageInput()
     } else {
-        console.error("Value of parameter: type must be `sent` or `incomming`.");
+        console.error("Value of parameter: type must be `outgoing` or `incomming`.");
     }
 }
 
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // সেন্ড লাইক
     document.getElementById("btnLike").addEventListener('click', () => {
-        sendLike('sent', messageContainer, new Date())
+        sendLike('outgoing', messageContainer, new Date())
     })
 
     const keyPressed = new Array()

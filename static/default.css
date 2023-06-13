@@ -118,7 +118,7 @@ body {
 }
 
 /* প্রেরিত মেসেজ */
-.message.sent {
+.message.outgoing {
     background-color: #0056AD;
     color: #fff;
     align-self: flex-end;
