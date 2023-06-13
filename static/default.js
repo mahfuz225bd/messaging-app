@@ -39,7 +39,7 @@ const sendMessage = (refMessageInput, refMessageContainer, datetime) => {
 
 // Function: sendLike()
 const sendLike = (type, refMessageContainer, datetime) => {
-    if (type === 'sent' || type === 'received') {
+    if (type === 'sent' || type === 'incomming') {
         // নতুন মেসেজ এলিমেন্ট তৈরি করে লাইক যুক্ত করা হচ্ছে
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', 'like', type)
@@ -52,7 +52,7 @@ const sendLike = (type, refMessageContainer, datetime) => {
 
         setFocusToMessageInput()
     } else {
-        console.error("Value of parameter: type must be `sent` or `received`.");
+        console.error("Value of parameter: type must be `sent` or `incomming`.");
     }
 }
 
