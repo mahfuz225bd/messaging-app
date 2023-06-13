@@ -4,14 +4,14 @@
 <div class="container">
     <div class="sidebar">
         <hgroup>
-            <h1>Chat List</h1>
+            <h1>Messaging App</h1>
             <div class="search-chatlist">
                 <input type="text" placeholder="Search..." class="search-input" id="searchInput">
                 <img src={{ url_for('static', filename='icons/search.png' ) }} alt=" Search" width="15" />
             </div>
         </hgroup>
         <ul class="chat-list" id="chatList">
-            <li class="active everyone">@everyone</li>
+            <!-- <li class="active everyone">@everyone</li> -->
             {% for username in usernames %}
             <li>{{username}}</li>
             {% endfor %}
