@@ -13,13 +13,17 @@
         <ul class="chat-list" id="chatList">
             <!-- <li class="active everyone">@everyone</li> -->
             {% for username in usernames %}
-            <li>{{username}}</li>
+            {% if loop.index0 == 0 %}
+            <li class="active">{{ username }}</li>
+            {% else %}
+            <li>{{ username }}</li>
+            {% endif %}
             {% endfor %}
         </ul>
     </div>
     <div class="chatbox">
         <div class="contact-info">
-            <h2>@everyone</h2>
+            <h2>{{ usernames[0] }}</h2>
         </div>
         <div class="conversation" id="conversation">
             <div class="message incomming" title="John Doe at Friday, March 17, 2023 at 8:36:59 PM">Hi, how are
