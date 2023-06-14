@@ -4,7 +4,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
-  database="contact_chats"
+  database="chat_app"
 )
 
 db_cursor = mydb.cursor()

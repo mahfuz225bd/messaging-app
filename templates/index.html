@@ -14,16 +14,16 @@
             <!-- <li class="active everyone">@everyone</li> -->
             {% for username in usernames %}
             {% if loop.index0 == 0 %}
-            <li class="active">{{ username }}</li>
+            <li class="active"><a href="#">{{ username }}</a></li>
             {% else %}
-            <li>{{ username }}</li>
+            <li><a href="/{{ username }}">{{ username }}</a></li>
             {% endif %}
             {% endfor %}
         </ul>
     </div>
     <div class="chatbox">
         <div class="contact-info">
-            <h2>{{ usernames[0] }}</h2>
+            <h2>{{ current_username }}</h2>
         </div>
         <div class="conversation" id="conversation">
             <div class="message incomming" title="John Doe at Friday, March 17, 2023 at 8:36:59 PM">Hi, how are
@@ -47,8 +47,8 @@
     </div>
     <a title="Get Source on GitHub" href="https://github.com/mahfuz225bd/messaging-app" class="github-source-link"
         target="_blank">
-        <img src={{ url_for('static', filename='img/available-on-github.png' ) }} alt="Available Source on GitHub"
-            width="100">
+        <!-- <img src={{ url_for('static', filename='img/available-on-github.png' ) }} alt="Available Source on GitHub"
+            width="100"> -->
     </a>
 </div>
 {% endblock %}

@@ -16,6 +16,19 @@ def index():
 
     return render_template("index.html", usernames=usernames)
 
+@app.route("/<route_username>")
+def userchat(route_username):
+    usernames = []
+    
+    db_cursor.execute("SELECT name FROM chat_users")
+
+    users = db_cursor.fetchall()
+
+    for username in users:
+        usernames.append(username[0])
+        
+    return render_template("index.html", usernames=usernames, current_username=route_username)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
