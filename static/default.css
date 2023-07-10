@@ -197,6 +197,11 @@ body {
     border: none;
 }
 
+/* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
+.send-message-form button[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
 .send-message-form button[type="submit"] {
     display: flex;
 }
@@ -210,11 +215,6 @@ body {
 .chatbox .send-message-form {
     padding-left: 20px;
     padding-right: 20px;
-}
-
-/* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
-.send-message-form button[type="submit"]:hover {
-    background-color: #0066cc;
 }
 
 .github-source-link {
@@ -248,4 +248,34 @@ body {
 .chat-list::-webkit-scrollbar-thumb:hover,
 .conversation::-webkit-scrollbar-thumb:hover {
     background: #666;
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+}
+
+/* Login Form submit বাটন */
+.login-form button[type="submit"] {
+    font-size: larger;
+    cursor: pointer;
+    background-color: #0056AD;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 7px;
+    padding: 15px;
+    border: none;
+}
+
+/* Login Form submit বাটনের :hover effect */
+.login-form button[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
+/* Login Form input */
+.login-form input {
+    width: 240px;
+    font-size: 16px;
+    border: none;
+    outline: none;
 }

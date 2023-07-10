@@ -1,4 +1,5 @@
 - Guest Login System
+- prevent routing by usernames (eg: login, logout)
 
 Optionals:
 - User login/registration system
