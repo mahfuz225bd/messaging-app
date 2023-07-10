@@ -1,4 +1,5 @@
 - Guest Login System
+- separate root css file into multiple css file
 - prevent routing by usernames (eg: login, logout)
 
 Optionals:
@@ -8,4 +9,4 @@ Optionals:
 - Design for message sidebar
 - User settings
 - Emoji palate for messaging
-- Send a attachment
+- Sending an attachment

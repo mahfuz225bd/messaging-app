@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="container">
-    <h3>Login as Guest</h3>
+<div class="container direction-column h-center v-center">
     <form class="login-form" action="/login_action">
-        <input type="text" id="username" placeholder="Enter Username" name="username">
+        <h3>Login as Guest</h3>
+        <input type="text" id="username" placeholder="@username" name="username">
         <button type="submit">Login</button>
     </form>
 </div>
