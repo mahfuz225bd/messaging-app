@@ -1,21 +1,19 @@
-/* সাইডবার লিস্ট এলিমেন্ট */
+/* Chat List */
 ul.chat-list {
     list-style: none;
     overflow-y: auto;
 }
 
-/* সাইডবার লিস্ট এলিমেন্টের আইটেম */
 ul.chat-list li {
     padding: 10px;
     cursor: pointer;
 }
 
-/* সাইডবার লিস্ট এলিমেন্টের আইটেম :hover effect */
 ul.chat-list li:hover {
     background-color: #ddd;
 }
 
-/* সাইডবার লিস্ট এলিমেন্টের আইটেম anchor */
+/* Anchor Elements */
 ul.chat-list li a {
     padding: 10px;
     cursor: pointer;
@@ -23,7 +21,7 @@ ul.chat-list li a {
     text-decoration: none;
 }
 
-/* activated li */
+/* Activated li */
 ul.chat-list li.active {
     background-color: #ddd;
 }

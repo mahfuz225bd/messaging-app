@@ -15,7 +15,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* মূল কন্টেনার */
 .container {
     display: flex;
     height: 100vh;
@@ -35,18 +34,15 @@ body {
     justify-content: center;
 }
 
-/* সাইডবার */
 aside {
     width: 300px;
     background-color: #f2f2f2;
 }
 
-/* সাইডবার হেডার গ্রুপ */
 aside hgroup {
     padding: 10px 10px 0 10px;
 }
 
-/* সাইডবার হেডিং */
 aside h1 {
     margin-bottom: 10px;
     font-size: 2em;

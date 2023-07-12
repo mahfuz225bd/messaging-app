@@ -1,10 +1,11 @@
-/* মেসেজ পাঠানোর ফরম */
+/* Send Message Form for Sending Message */
+
 .send-message-form {
     display: flex;
     padding-bottom: 10px;
 }
 
-/* মেসেজ ইনপুট */
+/* Message Input */
 .send-message-form textarea.message-input {
     outline: none;
     height: 50px;
@@ -17,7 +18,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* লাইক বাটন */
+/* Like Button */
 .send-message-form .btn-like {
     cursor: pointer;
     /* URL from current location */
@@ -28,13 +29,13 @@
     height: 25px;
 }
 
-/* লাইক বাটন :hover effect */
+/* Like Button :hover Effect */
 .send-message-form .btn-like:hover {
     /* URL from current location */
     background-image: url(./icons/like2.png);
 }
 
-/* মেসেজ পাঠানোর জন্য submit বাটন */
+/* Send Button */
 .send-message-form button[type="submit"] {
     font-size: larger;
     cursor: pointer;
@@ -46,11 +47,12 @@
     border: none;
 }
 
-/* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
+/* Send Button :hover Effect */
 .send-message-form button[type="submit"]:hover {
     background-color: #0066cc;
 }
 
+/* For Converting Button to Flex */
 .send-message-form button[type="submit"] {
     display: flex;
 }

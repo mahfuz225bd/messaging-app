@@ -1,4 +1,4 @@
-/* চ্যাটবক্স */
+/* Chat Box */
 .chat-box {
     flex: 1;
     background-color: #fff;
@@ -7,27 +7,26 @@
     justify-content: space-between;
 }
 
-/* চ্যাটবক্স কন্টাক্ট ইনফো */
+/* Contact Info */
 .chat-box .contact-info {
     background-color: #efefef;
     color: #666;
     padding: 20px;
 }
 
-
-/* চ্যাটবক্স হেডিং */
+/* h1 for Active User to Chat */
 .chat-box h1 {
     margin-bottom: 10px;
 }
 
-/* কনভার্সেশন */
+/* Conversation */
 .chat-box .conversation {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
 }
 
-/* মেসেজ */
+/* Single Message */
 .chat-box .message {
     margin: 10px 0;
     padding: 10px;
@@ -37,13 +36,13 @@
 
 }
 
-/* প্রাপ্ত মেসেজ */
+/* Received Message */
 .chat-box .message.incomming {
     background-color: #f2f2f2;
     align-self: flex-start;
 }
 
-/* প্রেরিত মেসেজ */
+/* Sent Message */
 .chat-box .message.outgoing {
     background-color: #0056AD;
     color: #fff;
@@ -51,7 +50,7 @@
     margin-right: 12px;
 }
 
-/* ম্যাসেজ লাইক */
+/* Message for Only Like */
 .chat-box .message.like {
     background: none;
     font-size: xx-large;

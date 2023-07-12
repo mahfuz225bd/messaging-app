@@ -13,7 +13,6 @@
     font-size: x-large;
 }
 
-/* Login Form submit বাটন */
 .login-form button[type="submit"] {
     font-size: larger;
     cursor: pointer;
@@ -24,12 +23,10 @@
     border: none;
 }
 
-/* Login Form submit বাটনের :hover effect */
 .login-form button[type="submit"]:hover {
     background-color: #0066cc;
 }
 
-/* Login Form input */
 .login-form input {
     font-size: larger;
     width: 240px;
