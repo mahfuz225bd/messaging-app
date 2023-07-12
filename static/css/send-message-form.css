@@ -22,7 +22,7 @@
 .send-message-form .btn-like {
     cursor: pointer;
     /* URL from current location */
-    background-image: url(./icons/like.png);
+    background-image: url(/static/icons/like.png);
     background-size: 100%;
     align-self: center;
     width: 25px;
@@ -32,7 +32,7 @@
 /* Like Button :hover Effect */
 .send-message-form .btn-like:hover {
     /* URL from current location */
-    background-image: url(./icons/like2.png);
+    background-image: url(/static/icons/like2.png);
 }
 
 /* Send Button */
