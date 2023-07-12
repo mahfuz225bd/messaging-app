@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('active');
 
             // নির্বাচিত ব্যবহারকারীর নামটি ব্যবহার করে চ্যাটবক্স হেডিং আপডেট করা হচ্ছে
-            const chat-boxHeading = document.querySelector('.chat-box h2');
-            chat - boxHeading.textContent = item.textContent;
+            const chatBoxHeading = document.querySelector('.chat-box h2');
+            chatBoxHeading.textContent = item.textContent;
         });
     });
 
@@ -108,8 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageInput = sendMessageForm.querySelector('#messageInput');
 
     // চ্যাটবক্স এবং মেসেজ কন্টেনার নেওয়া হচ্ছে
-    const chat-box = document.querySelector('.chat-box');
-    const messageContainer = chat - box.querySelector('.conversation');
+    const chatBox = document.querySelector('.chat-box');
+    const messageContainer = chatBox.querySelector('.conversation');
 
 
 
