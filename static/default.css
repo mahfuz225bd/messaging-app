@@ -36,19 +36,20 @@ body {
 }
 
 /* সাইডবার */
-.sidebar {
+aside {
     width: 300px;
     background-color: #f2f2f2;
 }
 
 /* সাইডবার হেডার গ্রুপ */
-.sidebar hgroup {
+aside hgroup {
     padding: 10px 10px 0 10px;
 }
 
 /* সাইডবার হেডিং */
-.sidebar h1 {
+aside h1 {
     margin-bottom: 10px;
+    font-size: 2em;
 }
 
 .github-source-link {

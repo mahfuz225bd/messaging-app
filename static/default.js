@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // নির্বাচিত ব্যবহারকারীর নামটি ব্যবহার করে চ্যাটবক্স হেডিং আপডেট করা হচ্ছে
             const chat-boxHeading = document.querySelector('.chat-box h2');
-            chat-boxHeading.textContent = item.textContent;
+            chat - boxHeading.textContent = item.textContent;
         });
     });
 
-    // .sidebar ul li থেকে সার্চ করার জন্য নোড গ্রহণ করা হচ্ছে
+    // aside ul li থেকে সার্চ করার জন্য নোড গ্রহণ করা হচ্ছে
     const searchInput = document.querySelector('#searchInput');
     searchInput.addEventListener('keyup', (e) => {
         const searchTerm = e.target.value.toLowerCase();
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // চ্যাটবক্স এবং মেসেজ কন্টেনার নেওয়া হচ্ছে
     const chat-box = document.querySelector('.chat-box');
-    const messageContainer = chat-box.querySelector('.conversation');
+    const messageContainer = chat - box.querySelector('.conversation');
 
 
 
