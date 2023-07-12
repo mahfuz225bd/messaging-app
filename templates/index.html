@@ -5,7 +5,7 @@
     <div class="sidebar">
         <hgroup>
             <h1>Messaging App</h1>
-            <div class="search-chatlist">
+            <div class="search-chat-list">
                 <input type="text" placeholder="Search..." class="search-input" id="searchInput">
                 <img src={{ url_for('static', filename='icons/search.png' ) }} alt=" Search" width="15" />
             </div>
@@ -21,7 +21,7 @@
             {% endfor %}
         </ul>
     </div>
-    <div class="chatbox">
+    <div class="chat-box">
         <div class="contact-info">
             <h2>{{ current_username }}</h2>
         </div>

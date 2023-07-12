@@ -1,0 +1,61 @@
+/* মেসেজ পাঠানোর ফরম */
+.send-message-form {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+/* মেসেজ ইনপুট */
+.send-message-form textarea.message-input {
+    outline: none;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    font-size: 16px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* লাইক বাটন */
+.send-message-form .btn-like {
+    cursor: pointer;
+    /* URL from current location */
+    background-image: url(./icons/like.png);
+    background-size: 100%;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+}
+
+/* লাইক বাটন :hover effect */
+.send-message-form .btn-like:hover {
+    /* URL from current location */
+    background-image: url(./icons/like2.png);
+}
+
+/* মেসেজ পাঠানোর জন্য submit বাটন */
+.send-message-form button[type="submit"] {
+    font-size: larger;
+    cursor: pointer;
+    background-color: #0056AD;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 7px;
+    padding: 15px;
+    border: none;
+}
+
+/* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
+.send-message-form button[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
+.send-message-form button[type="submit"] {
+    display: flex;
+}
+
+.send-message-form button[type="submit"] img {
+    margin-right: 5px;
+    margin-top: 2px;
+}

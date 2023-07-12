@@ -1,3 +1,10 @@
+@import "./css/login-form.css";
+@import "./css/send-message-form.css";
+@import "./css/chat-box.css";
+@import "./css/search-chat-list.css";
+@import "./css/chat-list.css";
+@import "./css/custom-scrollbar.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +14,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 /* মূল কন্টেনার */
 .container {
@@ -29,7 +35,6 @@ body {
     justify-content: center;
 }
 
-
 /* সাইডবার */
 .sidebar {
     width: 300px;
@@ -46,259 +51,8 @@ body {
     margin-bottom: 10px;
 }
 
-/* সাইডবার চ্যাট লিস্ট সার্চ */
-.sidebar .search-chatlist {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    background-color: #fff;
-}
-
-/* সাইডবার ইনপুট */
-.sidebar .search-chatlist .search-input {
-    width: 240px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-}
-
-
-/* সাইডবার লিস্ট এলিমেন্ট */
-.sidebar ul.chat-list {
-    list-style: none;
-    overflow-y: auto;
-}
-
-/* সাইডবার লিস্ট এলিমেন্টের আইটেম :hover effect */
-.sidebar ul.chat-list li:hover {
-    background-color: #ddd;
-}
-
-/* সাইডবার লিস্ট এলিমেন্টের আইটেম anchor */
-.sidebar ul.chat-list li a {
-    padding: 10px;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-}
-
-/* সাইডবার লিস্ট এলিমেন্টের আইটেম a */
-.sidebar ul.chat-list li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* সাইডবার লিস্ট এলিমেন্ট আইটেম, যেটি সক্রিয় */
-.sidebar ul.chat-list li.active {
-    background-color: #ddd;
-}
-
-/* সাইডবার লিস্ট এলিমেন্ট আইটেম, .everyone */
-.sidebar ul.chat-list li.everyone {
-    font-weight: bold;
-}
-
-/* চ্যাটবক্স */
-.chatbox {
-    flex: 1;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* চ্যাটবক্স কন্টাক্ট ইনফো */
-.chatbox .contact-info {
-    background-color: #efefef;
-    color: #666;
-    padding: 20px;
-}
-
-
-/* চ্যাটবক্স হেডিং */
-.chatbox h1 {
-    margin-bottom: 10px;
-}
-
-/* কনভার্সেশন */
-.conversation {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-/* মেসেজ */
-.message {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 60%;
-    font-size: larger;
-
-}
-
-/* প্রাপ্ত মেসেজ */
-.message.incomming {
-    background-color: #f2f2f2;
-    align-self: flex-start;
-}
-
-/* প্রেরিত মেসেজ */
-.message.outgoing {
-    background-color: #0056AD;
-    color: #fff;
-    align-self: flex-end;
-    margin-right: 12px;
-}
-
-/* ম্যাসেজ লাইক */
-.message.like {
-    background: none;
-    font-size: xx-large;
-}
-
-.message.like::after {
-    content: "👍";
-}
-
-
-/* মেসেজ পাঠানোর ফরম */
-.send-message-form {
-    display: flex;
-    padding-bottom: 10px;
-}
-
-/* মেসেজ ইনপুট */
-.send-message-form textarea.message-input {
-    outline: none;
-    height: 50px;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-top: 1px solid #ccc;
-    font-size: 16px;
-    resize: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* লাইক বাটন */
-.send-message-form .btn-like {
-    cursor: pointer;
-    /* URL from current location */
-    background-image: url(./icons/like.png);
-    background-size: 100%;
-    align-self: center;
-    width: 25px;
-    height: 25px;
-}
-
-/* লাইক বাটন :hover effect */
-.send-message-form .btn-like:hover {
-    /* URL from current location */
-    background-image: url(./icons/like2.png);
-}
-
-/* মেসেজ পাঠানোর জন্য submit বাটন */
-.send-message-form button[type="submit"] {
-    font-size: larger;
-    cursor: pointer;
-    background-color: #0056AD;
-    color: #fff;
-    font-weight: bold;
-    margin-left: 7px;
-    padding: 15px;
-    border: none;
-}
-
-/* মেসেজ পাঠানোর জন্য submit বাটনের :hover effect */
-.send-message-form button[type="submit"]:hover {
-    background-color: #0066cc;
-}
-
-.send-message-form button[type="submit"] {
-    display: flex;
-}
-
-.send-message-form button[type="submit"] img {
-    margin-right: 5px;
-    margin-top: 2px;
-}
-
-.chatbox .conversation,
-.chatbox .send-message-form {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 .github-source-link {
     position: absolute;
     right: 3px;
     top: 3px;
-}
-
-/* Custom Scrollbar */
-/* width */
-.chat-list::-webkit-scrollbar,
-.conversation::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Track */
-.chat-list::-webkit-scrollbar-track,
-.conversation::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-}
-
-/* Handle */
-.chat-list::-webkit-scrollbar-thumb,
-.conversation::-webkit-scrollbar-thumb {
-    background: #222;
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-.chat-list::-webkit-scrollbar-thumb:hover,
-.conversation::-webkit-scrollbar-thumb:hover {
-    background: #666;
-}
-
-/* Login Form */
-.login-form {
-    width: 500px;
-    border: #999 1px solid;
-    box-shadow: 10px 10px #999;
-    padding: 70px 15px 75px 15px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.login-form h3 {
-    margin-bottom: 25px;
-    font-size: x-large;
-}
-
-/* Login Form submit বাটন */
-.login-form button[type="submit"] {
-    font-size: larger;
-    cursor: pointer;
-    background-color: #0056AD;
-    color: #fff;
-    font-weight: bold;
-    padding: 15px;
-    border: none;
-}
-
-/* Login Form submit বাটনের :hover effect */
-.login-form button[type="submit"]:hover {
-    background-color: #0066cc;
-}
-
-/* Login Form input */
-.login-form input {
-    font-size: larger;
-    width: 240px;
-    padding: 15px;
-    border: none;
-    outline: none;
 }

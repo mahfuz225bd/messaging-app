@@ -1,0 +1,68 @@
+/* চ্যাটবক্স */
+.chat-box {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* চ্যাটবক্স কন্টাক্ট ইনফো */
+.chat-box .contact-info {
+    background-color: #efefef;
+    color: #666;
+    padding: 20px;
+}
+
+
+/* চ্যাটবক্স হেডিং */
+.chat-box h1 {
+    margin-bottom: 10px;
+}
+
+/* কনভার্সেশন */
+.chat-box .conversation {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* মেসেজ */
+.chat-box .message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    font-size: larger;
+
+}
+
+/* প্রাপ্ত মেসেজ */
+.chat-box .message.incomming {
+    background-color: #f2f2f2;
+    align-self: flex-start;
+}
+
+/* প্রেরিত মেসেজ */
+.chat-box .message.outgoing {
+    background-color: #0056AD;
+    color: #fff;
+    align-self: flex-end;
+    margin-right: 12px;
+}
+
+/* ম্যাসেজ লাইক */
+.chat-box .message.like {
+    background: none;
+    font-size: xx-large;
+}
+
+.chat-box .message.like::after {
+    content: "👍";
+}
+
+.chat-box .conversation,
+.chat-box .send-message-form {
+    padding-left: 20px;
+    padding-right: 20px;
+}

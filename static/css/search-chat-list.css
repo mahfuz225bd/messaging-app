@@ -1,0 +1,15 @@
+/* সাইডবার চ্যাট লিস্ট সার্চ */
+.search-chat-list {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+/* সাইডবার search ইনপুট */
+.search-chat-list .search-input {
+    width: 240px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
