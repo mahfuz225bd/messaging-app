@@ -5,16 +5,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    usernames = []
+    # usernames = []
     
-    db_cursor.execute("SELECT name FROM chat_users")
+    # db_cursor.execute("SELECT name FROM chat_users")
 
-    users = db_cursor.fetchall()
+    # users = db_cursor.fetchall()
 
-    for username in users:
-        usernames.append(username[0])
+    # for username in users:
+    #     usernames.append(username[0])
 
-    return render_template("index.html", usernames=usernames)
+    # return render_template("index.html", usernames=usernames)
+    return render_template("login.html")
 
 @app.route("/login")
 def login():
