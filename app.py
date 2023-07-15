@@ -9,22 +9,22 @@ Session(app)
 
 def insert_anonymous_user(username):
     try:
-        db_cursor.execute("INSERT INTO `chat_users`(`username`, `anonymous`) VALUES (%s, '1')", (username,))
+        db_cursor.execute("INSERT INTO `chat_users`(`username`, `anonymous`) VALUES (%s, 1)", (username,))
         mydb.commit()
     except Error as err:
         return "[ERROR] ", err, "occured while inserting new anonymous/guest user into database."
     
 def find_anonymous_user(username):
-    db_cursor.execute("SELECT user_id, username, active FROM `chat_users` WHERE username=%s AND anonymous=1", (username,))
+    db_cursor.execute("SELECT user_id, uuid, username, active FROM `chat_users` WHERE username=%s AND anonymous=1", (username,))
     user = db_cursor.fetchone()
 
     return user
 
 def mark_user_active(username, active=True):
-    active_value = int(active)
+    active_value = bool(active)
     
     try:
-        db_cursor.execute(f"UPDATE `chat_users` SET `active`={active_value} WHERE  `username`={username}")
+        db_cursor.execute(f"UPDATE `chat_users` SET `active`={active_value} WHERE  `username`='{username}'")
         mydb.commit()
 
         return db_cursor.rowcount != 0
@@ -33,8 +33,13 @@ def mark_user_active(username, active=True):
 
 
 @app.route("/")
-def index():    
-    logged_in = bool(session['logged_in'])
+def index():
+    logged_in = False
+
+    try:
+        logged_in = bool(session['logged_in'])
+    except:
+        logged_in = False
     
     if logged_in:
         usernames = []
@@ -70,8 +75,10 @@ def login_action():
         session['logged_in'] = True
         session['username'] = username
         
-        username_from_session = username
-        found_user_by_session_value = bool(find_anonymous_user(username_from_session))
+        username_from_session = session['username']
+        user_by_session_value = find_anonymous_user(username_from_session)[2]
+
+        found_user_by_session_value = bool(user_by_session_value)
         if found_user_by_session_value:
             mark_user_active(username_from_session, True)
             return redirect("/")
