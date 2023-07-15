@@ -1,7 +1,10 @@
-- Complete guest login system
+- Routing user chat environment by username
+- Username validation system
+- Delete everything of message history to database while logged out an anonymous user
 - prevent routing by usernames (eg: login, logout)
 
 Optionals:
+
 - User login/registration system
 - Adding avatar:minidenticons for profiles
 - Design for message header

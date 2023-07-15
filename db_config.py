@@ -7,4 +7,6 @@ mydb = mysql.connector.connect(
   database="chat_app"
 )
 
+Error = mysql.connector.Error
+
 db_cursor = mydb.cursor()
