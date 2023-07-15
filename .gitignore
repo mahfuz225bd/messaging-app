@@ -1,2 +1,5 @@
+# Ignore .venv folder
 .venv/
+
+# Ignore flask_session folder
 flask_session/
