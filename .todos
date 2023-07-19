@@ -1,7 +1,7 @@
 - Avoiding duplicate user creation and suggest like username_2
 - Routing user chat environment by username
 - Username validation system
-- Delete everything of message history to database while logged out an anonymous user
+- Delete everything of message history to database while logged out as an anonymous user
 - Prevent routing by usernames (eg: login, logout)
 
 Optionals:
