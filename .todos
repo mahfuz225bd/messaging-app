@@ -1,12 +1,11 @@
-- Avoiding duplicate user creation and suggest like username_2
 - Routing user chat environment by username
-- Username validation system
-- Delete everything of message history to database while logged out as an anonymous user
+- Complete user login system
+- User registration system
+- Username validation system while registration
 - Prevent routing by usernames (eg: login, logout)
 
 Optionals:
 
-- User login/registration system
 - Adding avatar:minidenticons for profiles
 - Design for message header
 - Design for message sidebar
