@@ -7,15 +7,15 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-def insert_anonymous_user(username):
+def insert_user(username):
     try:
-        db_cursor.execute("INSERT INTO `chat_users`(`username`, `anonymous`) VALUES (%s, 1)", (username,))
+        db_cursor.execute("INSERT INTO `chat_users`(`username`) VALUES (%s)", (username,))
         mydb.commit()
     except Error as err:
         return "[ERROR] ", err, "occured while inserting new anonymous/guest user into database."
     
-def find_anonymous_user(username):
-    db_cursor.execute("SELECT user_id, uuid, username, active FROM `chat_users` WHERE username=%s AND anonymous=1", (username,))
+def find_user(username):
+    db_cursor.execute("SELECT user_id, uuid, username, active FROM `chat_users` WHERE username=%s", (username,))
     user = db_cursor.fetchone()
 
     return user
@@ -61,22 +61,19 @@ def login():
 
 @app.route("/login_action", methods=['POST', 'GET'])
 def login_action():
-    """
-        Login action as anonymous
-    """
     if request.method == "POST":
         username = request.form.get('username')
 
-        found_user_by_form_value = bool(find_anonymous_user(username))
+        found_user_by_form_value = bool(find_user(username))
         if not found_user_by_form_value:
-            insert_anonymous_user(username)
+            insert_user(username)
 
         # Creating sessions
         session['logged_in'] = True
         session['username'] = username
         
         username_from_session = session['username']
-        user_by_session_value = find_anonymous_user(username_from_session)[2]
+        user_by_session_value = find_user(username_from_session)[2]
 
         found_user_by_session_value = bool(user_by_session_value)
         if found_user_by_session_value:
