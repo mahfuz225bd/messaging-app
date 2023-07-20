@@ -36,28 +36,17 @@
 }
 
 /* Send Button */
-.send-message-form button[type="submit"] {
+.send-message-form .btn-send {
     font-size: larger;
-    cursor: pointer;
-    background-color: #0056AD;
-    color: #fff;
-    font-weight: bold;
     margin-left: 7px;
-    padding: 15px;
-    border: none;
-}
-
-/* Send Button :hover Effect */
-.send-message-form button[type="submit"]:hover {
-    background-color: #0066cc;
 }
 
 /* For Converting Button to Flex */
-.send-message-form button[type="submit"] {
+.send-message-form .btn-send {
     display: flex;
 }
 
-.send-message-form button[type="submit"] img {
+.send-message-form .btn-send img {
     margin-right: 5px;
     margin-top: 2px;
 }
