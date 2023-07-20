@@ -1,0 +1,23 @@
+/* Login Form */
+
+.login-form {
+    width: 500px;
+    border: #999 1px solid;
+    box-shadow: 10px 10px #999;
+    padding: 70px 45px 75px 45px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.login-form input {
+    margin-bottom: 10px;
+}
+
+.login-form .btn-login {
+    width: 100%;
+}
+
+.login-form .btn-registration {
+    margin-top: 15px;
+    font-size: larger;
+}
