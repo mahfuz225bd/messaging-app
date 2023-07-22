@@ -58,17 +58,21 @@ def index():
     
 @app.route("/<route_username>")
 def userchat(route_username):
-    usernames = []
-    
-    username_from_session = session['username']
-    db_cursor.execute(f"SELECT name FROM chat_users WHERE username <> '{username_from_session}'")
+    logged_in = session['logged_in']
 
-    users = db_cursor.fetchall()
-
-    for username in users:
-        usernames.append(username[0])
+    if logged_in:
+        usernames = []
         
-    return render_template("index.html", usernames=usernames, current_username=route_username)
+        username_from_session = session['username']
+        db_cursor.execute(f"SELECT name FROM chat_users WHERE username <> '{username_from_session}'")
+
+        users = db_cursor.fetchall()
+
+        for username in users:
+            usernames.append(username[0])
+            
+        return render_template("index.html", usernames=usernames, current_username=route_username)
+    return redirect("/login")
 
 @app.route("/login")
 def login():
@@ -80,20 +84,21 @@ def login_action():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        print('===', password)
-
-        # Creating sessions
-        session['logged_in'] = True
-        session['username'] = username
+        found_user_by_form_value = bool(find_user(username, password))
+        if found_user_by_form_value:
+            # Creating sessions
+            session['logged_in'] = True
+            session['username'] = username
         
-        username_from_session = session['username']
+        username_from_session = session['username'] if session['username'] else ''
         user_by_session_value = find_user(username_from_session, password)
 
         found_user_by_session_value = bool(user_by_session_value)
         if found_user_by_session_value:
-            mark_user_active(username_from_session, True)
+            mark_user_active(username_from_session, True)        
+            return redirect("/")
+        return '<script>window.location.href = "/"; alert("Wrong username or password");</script>'
         
-        return redirect("/")
 
 @app.route("/logout")
 def logout():
