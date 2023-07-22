@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+.login-form h3 {
+    font-size: xx-large;
+}
+
 .login-form input {
     margin-bottom: 10px;
 }
@@ -20,4 +24,11 @@
 .login-form .btn-registration {
     margin-top: 15px;
     font-size: larger;
+}
+
+@media screen and (max-width: 600px) {
+    .login-form {
+        border: none;
+        box-shadow: none;
+    }
 }
