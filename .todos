@@ -1,9 +1,6 @@
-- Routing user chat environment by username
-- Complete user login system
 - User registration system
 - Username validation system while registration
 - Prevent routing by usernames (eg: login, logout)
-- For /login if already logged in show homepage
 
 Optionals:
 

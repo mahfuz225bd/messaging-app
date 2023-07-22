@@ -79,6 +79,9 @@ def userchat(route_username):
 
 @app.route("/login")
 def login():
+    if session['logged_in']:
+        return redirect('/')
+    
     return render_template("login.html")
 
 @app.route("/login_action", methods=['POST', 'GET'])
