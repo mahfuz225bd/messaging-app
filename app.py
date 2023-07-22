@@ -53,8 +53,8 @@ def index():
             usernames.append(username[0])
 
         return redirect("/" + usernames[0])
-    else:
-        return redirect("/login")
+    
+    return redirect("/login")
     
 @app.route("/<route_username>")
 def userchat(route_username):
@@ -70,8 +70,11 @@ def userchat(route_username):
 
         for username in users:
             usernames.append(username[0])
-            
+
+        if route_username not in usernames:
+            return f'<script>window.location.href = "/"; alert("Usern{route_username} not found.");</script>'
         return render_template("index.html", usernames=usernames, current_username=route_username)
+    
     return redirect("/login")
 
 @app.route("/login")
