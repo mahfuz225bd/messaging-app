@@ -14,8 +14,8 @@ def insert_user(username):
     except Error as err:
         return "[ERROR] ", err, "occured while inserting new anonymous/guest user into database."
     
-def find_user(username):
-    db_cursor.execute("SELECT user_id, uuid, username, active FROM `chat_users` WHERE username=%s", (username,))
+def find_user(username, password):
+    db_cursor.execute("SELECT user_id, uuid, username, active FROM `chat_users` WHERE username=%s AND password=MD5(%s)", (username, password))
     user = db_cursor.fetchone()
 
     return user
@@ -43,17 +43,32 @@ def index():
     
     if logged_in:
         usernames = []
-    
-        db_cursor.execute("SELECT name FROM chat_users")
+
+        username_from_session = session['username']
+        db_cursor.execute(f"SELECT name FROM chat_users WHERE username <> '{username_from_session}'")
 
         users = db_cursor.fetchall()
 
         for username in users:
             usernames.append(username[0])
 
-        return render_template("index.html", usernames=usernames)
+        return redirect("/" + usernames[0])
     else:
         return redirect("/login")
+    
+@app.route("/<route_username>")
+def userchat(route_username):
+    usernames = []
+    
+    username_from_session = session['username']
+    db_cursor.execute(f"SELECT name FROM chat_users WHERE username <> '{username_from_session}'")
+
+    users = db_cursor.fetchall()
+
+    for username in users:
+        usernames.append(username[0])
+        
+    return render_template("index.html", usernames=usernames, current_username=route_username)
 
 @app.route("/login")
 def login():
@@ -63,22 +78,22 @@ def login():
 def login_action():
     if request.method == "POST":
         username = request.form.get('username')
+        password = request.form.get('password')
 
-        found_user_by_form_value = bool(find_user(username))
-        if not found_user_by_form_value:
-            insert_user(username)
+        print('===', password)
 
         # Creating sessions
         session['logged_in'] = True
         session['username'] = username
         
         username_from_session = session['username']
-        user_by_session_value = find_user(username_from_session)[2]
+        user_by_session_value = find_user(username_from_session, password)
 
         found_user_by_session_value = bool(user_by_session_value)
         if found_user_by_session_value:
             mark_user_active(username_from_session, True)
-            return redirect("/")
+        
+        return redirect("/")
 
 @app.route("/logout")
 def logout():
@@ -92,20 +107,6 @@ def logout():
     session['username'] = None
     
     return redirect('/login')
-
-# @app.route("/<route_username>")
-# def userchat(route_username):
-#     usernames = []
-    
-#     db_cursor.execute("SELECT name FROM chat_users")
-
-#     users = db_cursor.fetchall()
-
-#     for username in users:
-#         usernames.append(username[0])
-        
-#     return render_template("index.html", usernames=usernames, current_username=route_username)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
