@@ -1,10 +1,29 @@
 /* Form */
-input {
+.form {
+    width: 500px;
+    border: #999 1px solid;
+    box-shadow: 10px 10px #999;
+    padding: 70px 45px 75px 45px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.form input:not([type='radio']),
+.form select {
     font-size: larger;
     width: 100%;
     padding: 15px;
     border: 1px solid #999;
     outline: none;
+}
+
+.form input[type='radio'] {
+    margin-right: 5px;
+}
+
+.form input,
+.form select {
+    margin-bottom: 10px;
 }
 
 .form a {
@@ -16,9 +35,43 @@ input {
     text-decoration: underline;
 }
 
+.form h3 {
+    font-size: xx-large;
+}
+
 .form .space-top-bottom {
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.form fieldset {
+    display: flex;
+    border: none;
+}
+
+.form fieldset legend {
+    text-align: left;
+}
+
+.form fieldset label {
+    height: 55px;
+    width: 100%;
+    border: 1px solid #999;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+label input[type='radio'] {
+    margin-top: 7px;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+}
+
+.form fieldset>*:not(:last-child) {
+    margin-right: 10px;
 }
 
 /* Buttons */
@@ -30,6 +83,20 @@ button {
     padding: 15px;
     border: none;
     font-size: medium;
+}
+
+button.full-width {
+    width: 100%;
+}
+
+button.larger {
+    font-size: larger;
+}
+
+button.btn-registration {
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-primary {
@@ -46,4 +113,11 @@ button {
 
 .btn-success:hover {
     background-color: #059862;
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        border: none;
+        box-shadow: none;
+    }
 }

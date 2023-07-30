@@ -77,10 +77,21 @@ def userchat(route_username):
     
     return redirect("/login")
 
+@app.route("/signup")
+def signup():
+    return render_template("registration.html")
+
 @app.route("/login")
 def login():
-    if session['logged_in']:
-        return redirect('/')
+    logged_in = False
+
+    try:
+        logged_in = bool(session['logged_in'])
+    except:
+        logged_in = False
+
+    if logged_in:
+        return redirect("/")
     
     return render_template("login.html")
 

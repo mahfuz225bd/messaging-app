@@ -9,14 +9,6 @@
     text-align: center;
 }
 
-.login-form h3 {
-    font-size: xx-large;
-}
-
-.login-form input {
-    margin-bottom: 10px;
-}
-
 .login-form .btn-login {
     width: 100%;
 }

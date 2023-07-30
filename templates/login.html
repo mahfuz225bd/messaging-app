@@ -2,18 +2,18 @@
 
 {% block body %}
 <div class="container direction-column h-center v-center">
-    <form class="form login-form" action="/login_action" method="post">
+    <form class="form" action="/login_action" method="post">
         <h3>Log in</h3>
         <br>
         <input type="text" id="username" placeholder="Username" name="username">
         <br>
         <input type="password" id="password" placeholder="Password" name="password">
         <br>
-        <button type="submit" class="btn-primary btn-login">Login</button>
+        <button type="submit" class="btn-primary full-width">Login</button>
         <p class="space-top-bottom"><a href="https://google.com/">Forgotten Password?</a></p>
         <br>
         <hr>
-        <button type="button" class="btn-success btn-registration">Create new Account</button>
+        <button type="button" class="btn-success larger btn-registration">Create new Account</button>
     </form>
 </div>
 {% endblock %}
