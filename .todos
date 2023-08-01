@@ -1,4 +1,3 @@
-- Registration Form: mark all fields as required
 - Username validation system while registration
 - Prevent routing by usernames (eg: login, logout)
 
