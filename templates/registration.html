@@ -13,11 +13,11 @@
 
         <input type="text" id="mobileNoOrEmail" placeholder="Mobile Number or Email Address *" name="mobileNoOrEmail" required>
 
-        <input type="passwrod" id="password" placeholder="Password" name="password" required>
-        <input type="passwrod" id="rePassword" placeholder="Re-type Password" required>
+        <input type="passwrod" id="password" placeholder="Password *" name="password" required>
+        <input type="passwrod" id="rePassword" placeholder="Re-type Password *" required>
 
         <fieldset>
-            <legend>Date of birth</legend>
+            <legend>Date of birth <span class="required"></span></legend>
             <select name="birthday_day" id="day" title="Day" required>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -189,7 +189,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>Gender</legend>
+            <legend>Gender <span class="required"></span></legend>
             <label for="gender_male"><input type="radio" id="gender_male" name="gender" value="male" required>Male</label>
             <label for="gender_female"><input type="radio" id="gender_female" name="gender"
                     value="female">Female</label>

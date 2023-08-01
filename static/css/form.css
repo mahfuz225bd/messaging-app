@@ -121,3 +121,11 @@ button.btn-registration {
         box-shadow: none;
     }
 }
+
+span.required {
+    color: red;
+}
+
+span.required::after {
+    content: "*";
+}
