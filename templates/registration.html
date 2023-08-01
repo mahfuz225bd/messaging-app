@@ -11,14 +11,14 @@
             <input type="text" id="lastName" placeholder="Last Name" name="lastName">
         </fieldset>
 
-        <input type="text" id="mobileNoOrEmail" placeholder="Mobile Number or Email Address" name="mobileNoOrEmail">
+        <input type="text" id="mobileNoOrEmail" placeholder="Mobile Number or Email Address *" name="mobileNoOrEmail" required>
 
-        <input type="passwrod" id="password" placeholder="Password" name="password">
-        <input type="passwrod" id="rePassword" placeholder="Re-type Password">
+        <input type="passwrod" id="password" placeholder="Password" name="password" required>
+        <input type="passwrod" id="rePassword" placeholder="Re-type Password" required>
 
         <fieldset>
             <legend>Date of birth</legend>
-            <select name="birthday_day" id="day" title="Day">
+            <select name="birthday_day" id="day" title="Day" required>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -51,7 +51,7 @@
                 <option value="30" selected="1">30</option>
                 <option value="31">31</option>
             </select>
-            <select name="birthday_month" id="month" title="Month">
+            <select name="birthday_month" id="month" title="Month" required>
                 <option value="1">Jan</option>
                 <option value="2">Feb</option>
                 <option value="3">Mar</option>
@@ -65,7 +65,7 @@
                 <option value="11">Nov</option>
                 <option value="12">Dec</option>
             </select>
-            <select name="birthday_year" id="year" title="Year">
+            <select name="birthday_year" id="year" title="Year" required>
                 <option value="2023" selected="1">2023</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
@@ -190,7 +190,7 @@
 
         <fieldset>
             <legend>Gender</legend>
-            <label for="gender_male"><input type="radio" id="gender_male" name="gender" value="male">Male</label>
+            <label for="gender_male"><input type="radio" id="gender_male" name="gender" value="male" required>Male</label>
             <label for="gender_female"><input type="radio" id="gender_female" name="gender"
                     value="female">Female</label>
             <label for="gender_other"><input type="radio" id="gender_other" name="gender" value="other">Other</label>
