@@ -1,18 +1,22 @@
 from flask import Flask, render_template, request, session, redirect
 from flask_session import Session
 from db_config import db_cursor, mydb, Error
+from datetime import date
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-def insert_user(username):
+def insert_user(first_name, last_name, email, username, password, dob, gender):
     try:
-        db_cursor.execute("INSERT INTO `chat_users`(`username`) VALUES (%s)", (username,))
+        sql = "INSERT INTO `chat_users` (first_name`, `last_name`, `email`, `username`, `password`, `dob`, `gender`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        values = (first_name, last_name, email, username, password, dob, gender)
+        db_cursor.execute(sql, values)
+
         mydb.commit()
     except Error as err:
-        return "[ERROR] ", err, "occured while inserting new anonymous/guest user into database."
+        return "[ERROR] ", err, "occured while inserting new user into database."
     
 def find_user(username, password):
     db_cursor.execute("SELECT user_id, uuid, username, active FROM `chat_users` WHERE username=%s AND password=MD5(%s)", (username, password))
@@ -29,7 +33,7 @@ def mark_user_active(username, active=True):
 
         return db_cursor.rowcount != 0
     except Error as err:
-        return "[ERROR] ", err, "occured while inserting new anonymous/guest user into database." 
+        return "[ERROR] ", err, f"occured while setting `activate`={active_value} into database." 
 
 
 @app.route("/")
@@ -80,6 +84,22 @@ def userchat(route_username):
 @app.route("/signup")
 def signup():
     return render_template("registration.html")
+
+@app.route("/register")
+def register():
+    if request.method == "POST":
+        first_name = request.args["first_name"]
+        last_name  = request.args["last_name"]
+        email      = request.args["email"].lower().strip()
+        username   = request.args["username"].lower().strip()
+        password   = request.args["password"]
+        dob        = date(request.args["birthday_year"], request.args["birthday_month"], request.args["birthday_day"])
+        gender     = request.args["gender"]
+
+        insert_user(first_name, last_name, email, username, password, dob, gender)
+
+        return redirect("/login")
+        
 
 @app.route("/login")
 def login():
