@@ -126,8 +126,11 @@ def login_action():
             # Creating sessions
             session['logged_in'] = True
             session['username'] = username
+        else:
+            session['logged_in'] = False
+            session['username'] = None
         
-        username_from_session = session['username'] if session['username'] else ''
+        username_from_session = session['username']
         user_by_session_value = find_user(username_from_session, password)
 
         found_user_by_session_value = bool(user_by_session_value)
